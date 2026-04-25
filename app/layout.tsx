@@ -56,7 +56,7 @@ export default function RootLayout({
       <body className="min-h-full w-full max-w-[1600px] mx-auto flex flex-col">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
