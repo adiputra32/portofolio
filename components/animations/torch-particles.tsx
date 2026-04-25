@@ -91,8 +91,8 @@ const Particle = ({
     let targetOrigin = 0.5;
 
     if (vel > threshold) {
-      // Scrolling down -> stretch up proportional to speed (max 4x)
-      targetScale = Math.min(1 + (vel - threshold) / 100, 4);
+      // Scrolling down -> stretch up proportional to speed (max 2x)
+      targetScale = Math.min(1 + (vel - threshold) / 100, 2);
       targetOrigin = 1;
     } else if (vel < -threshold) {
       // Scrolling up -> shrink proportional to speed (min 2px)

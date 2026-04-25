@@ -23,8 +23,10 @@ const Navigation = () => {
   const [language, setLanguage] = useState("EN");
   const [activeSection, setActiveSection] = useState("about");
   const [hoveredMenu, setHoveredMenu] = useState<string | undefined>();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const observer = new IntersectionObserver(
       (entries) => {
         // Find the overlapping entry that is intersecting
@@ -105,10 +107,14 @@ const Navigation = () => {
               setTheme(theme === "dark" ? "light" : "dark");
             }}
           >
-            {theme === "dark" ? (
-              <PixelMoonIcon className="size-7" />
+            {mounted ? (
+              theme === "dark" ? (
+                <PixelMoonIcon className="size-7" />
+              ) : (
+                <PixelSunIcon className="size-7" />
+              )
             ) : (
-              <PixelSunIcon className="size-7" />
+              <div className="size-7" />
             )}
           </Button>
           <Button
