@@ -21,7 +21,7 @@ const useSectionProgress = (
 ) => {
   const { scrollYProgress, scrollY } = useScroll({
     target: ref as RefObject<HTMLElement>,
-    offset: offset || ["start 0.75", "start 0"],
+    offset: offset || ["start 0.75", "start 0.1"],
   });
 
   return { scrollYProgress, scrollY };
