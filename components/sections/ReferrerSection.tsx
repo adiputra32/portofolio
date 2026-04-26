@@ -1,6 +1,6 @@
 "use client";
 
-import { Dictionary } from "@/lib/get-dictionary";
+import type { Dictionary } from "@/lib/get-dictionary";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -16,7 +16,7 @@ const ReferrerSection = ({ dict }: ReferrerSectionProps) => {
       </h1>
 
       <div className="flex flex-col items-center gap-8">
-        <motion.div className="w-4xl mr-12">
+        <motion.div className="w-full max-w-4xl mr-12">
           <Image
             src="/hero2.png"
             alt="hero"
@@ -42,7 +42,7 @@ const ReferrerSection = ({ dict }: ReferrerSectionProps) => {
           </div>
         </motion.div>
 
-        <motion.div className="w-4xl ml-12">
+        <motion.div className="w-full max-w-4xl ml-12">
           <Image
             src="/hero2.png"
             alt="hero"
@@ -68,7 +68,7 @@ const ReferrerSection = ({ dict }: ReferrerSectionProps) => {
           </div>
         </motion.div>
 
-        <motion.div className="w-4xl mr-12">
+        <motion.div className="w-full max-w-4xl mr-12">
           <Image
             src="/hero2.png"
             alt="hero"
@@ -93,7 +93,7 @@ const ReferrerSection = ({ dict }: ReferrerSectionProps) => {
           </div>
         </motion.div>
 
-        <motion.div className="w-4xl ml-12">
+        <motion.div className="w-full max-w-4xl ml-12">
           <Image
             src="/hero2.png"
             alt="hero"

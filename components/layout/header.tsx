@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import {
   PixelMoonIcon,
   PixelSpeakerOffIcon,
@@ -15,12 +15,17 @@ const Header = ({ locale }: { locale: string }) => {
   const { theme, setTheme } = useTheme();
   const [isPending, startTransition] = useTransition();
   const [isSoundOn, setSoundOn] = useState(true);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const currentLang = locale === "id" ? "ID" : "EN";
 
   return (
-    <header className="flex justify-between items-center gap-4 fixed w-7xl max-w-[100vw] h-[14vh] z-50 px-4">
+    <header className="flex justify-between items-center gap-4 fixed w-full max-w-7xl h-[14vh] z-50 px-4">
       <div className="flex items-center gap-2">
-        <h1 className="text-3xl font-press-start space-x-4">
+        <h1 className="text-lg lg:text-3xl font-press-start space-x-4">
           <span>ADI</span>
           <span className="bg-foreground text-background pl-2 pr-1 pt-2 pb-1">
             PORTFOLIO
@@ -36,8 +41,12 @@ const Header = ({ locale }: { locale: string }) => {
               setTheme(theme === "dark" ? "light" : "dark");
             }}
           >
-            {theme === "dark" ? (
-              <PixelMoonIcon className="size-7" />
+            {mounted ? (
+              theme === "dark" ? (
+                <PixelMoonIcon className="size-7" />
+              ) : (
+                <PixelSunIcon className="size-7" />
+              )
             ) : (
               <PixelSunIcon className="size-7" />
             )}

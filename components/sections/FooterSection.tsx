@@ -1,12 +1,11 @@
 "use client";
 
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import PixelIcon from "@/components/ui/pixel-icon";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { SOCIAL_LINKS } from "@/data/social-links";
-import { Dictionary } from "@/lib/get-dictionary";
+import type { Dictionary } from "@/lib/get-dictionary";
 
 interface FooterSectionProps {
   dict: Dictionary;
@@ -17,7 +16,7 @@ const FooterSection = ({ dict }: FooterSectionProps) => {
 
   return (
     <section id="footer" className="h-screen flex items-center justify-center">
-      <motion.div className="w-5xl">
+      <motion.div className="w-full max-w-5xl">
         <Image
           src="/hero2.png"
           alt="hero"

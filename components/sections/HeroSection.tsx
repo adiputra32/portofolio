@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Dictionary } from "@/lib/get-dictionary";
+import type { Dictionary } from "@/lib/get-dictionary";
 
 interface HeroSectionProps {
   dict: Dictionary;
@@ -11,7 +11,7 @@ interface HeroSectionProps {
 const HeroSection = ({ dict }: HeroSectionProps) => {
   return (
     <section id="none" className="h-screen flex items-center justify-center">
-      <motion.div className="w-5xl">
+      <motion.div className="w-full max-w-5xl">
         <Image
           src="/hero2.png"
           alt="hero"
@@ -21,10 +21,10 @@ const HeroSection = ({ dict }: HeroSectionProps) => {
           className="mr-auto ml-12"
         />
         <div className="border-8 border-foreground dark:border-foreground p-6">
-          <p className="font-press-start text-lg font-bold leading-loose uppercase mb-4">
+          <p className="font-press-start text-[12px] lg:text-lg font-bold leading-loose uppercase mb-4">
             Adi
           </p>
-          <p className="font-press-start text-lg leading-loose uppercase">
+          <p className="font-press-start text-[12px] lg:text-lg leading-loose uppercase">
             {dict.hero.greetings}
           </p>
         </div>

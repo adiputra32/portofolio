@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import useSectionProgress from "../animations/scroll-progress";
 import { useMotionValueEvent, useTransform, motion } from "framer-motion";
-import { Dictionary } from "@/lib/get-dictionary";
+import type { Dictionary } from "@/lib/get-dictionary";
 
 const MotionImage = motion.create(Image);
 
@@ -45,23 +45,23 @@ const AboutSection = ({ dict }: AboutSectionProps) => {
       id="about"
       className="relative h-screen mx-auto overflow-hidden"
     >
-      <div className="flex h-full items-center">
+      <div className="flex flex-col lg:flex-row h-full items-center justify-center pt-20 lg:pt-0">
         <div className="flex-1 flex flex-col gap-4 text-center mx-auto">
-          <h1 className="text-4xl font-press-start font-normal tracking-wide mb-4">
+          <h1 className="text-2xl md:text-4xl font-press-start font-normal tracking-wide mb-4">
             {dict.about.title}
           </h1>
-          <p className="text-2xl font-bold font-inter tracking-wide leading-relaxed">
+          <p className="text-base md:text-2xl font-bold font-inter tracking-wide leading-relaxed">
             {dict.about.paragraph1}
           </p>
-          <p className="text-2xl font-bold font-inter tracking-wide leading-relaxed">
+          <p className="text-base md:text-2xl font-bold font-inter tracking-wide leading-relaxed">
             {dict.about.paragraph2}
           </p>
-          <p className="text-2xl font-bold font-inter tracking-wide leading-relaxed">
+          <p className="text-base md:text-2xl font-bold font-inter tracking-wide leading-relaxed">
             {dict.about.paragraph3}
           </p>
         </div>
 
-        <div className="flex-1 relative h-[80vh]">
+        <div className="flex-1 relative h-[40vh] lg:h-[80vh] w-full">
           <MotionImage
             src={IMAGE[imageIndex]}
             alt="Me"

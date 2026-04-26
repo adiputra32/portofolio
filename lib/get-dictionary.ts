@@ -16,5 +16,6 @@ export const getDictionary = async () => {
   const localeCookie = cookieStore.get('NEXT_LOCALE')?.value as Locale | undefined;
   const locale = localeCookie && dictionaries[localeCookie] ? localeCookie : defaultLocale;
   
-  return dictionaries[locale]();
+  const dict = await dictionaries[locale]();
+  return { dict, locale };
 };

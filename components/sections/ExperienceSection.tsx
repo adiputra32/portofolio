@@ -1,6 +1,6 @@
 "use client";
 
-import { Dictionary } from "@/lib/get-dictionary";
+import type { Dictionary } from "@/lib/get-dictionary";
 import { MdSquare } from "react-icons/md";
 
 interface ExperienceSectionProps {

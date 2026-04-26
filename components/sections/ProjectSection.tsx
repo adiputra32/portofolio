@@ -1,6 +1,6 @@
 "use client";
 
-import { Dictionary } from "@/lib/get-dictionary";
+import type { Dictionary } from "@/lib/get-dictionary";
 
 interface ProjectSectionProps {
   dict: Dictionary;
