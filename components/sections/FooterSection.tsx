@@ -1,12 +1,22 @@
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+"use client";
+
 import PixelIcon from "@/components/ui/pixel-icon";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
+import { SOCIAL_LINKS } from "@/data/social-links";
+import type { Dictionary } from "@/lib/get-dictionary";
 
-const FooterSection = () => {
+interface FooterSectionProps {
+  dict: Dictionary;
+}
+
+const FooterSection = ({ dict }: FooterSectionProps) => {
+  const [buttonHovered, setButtonHovered] = useState<string | null>();
+
   return (
     <section id="footer" className="h-screen flex items-center justify-center">
-      <motion.div className="w-5xl">
+      <motion.div className="w-full max-w-5xl">
         <Image
           src="/hero2.png"
           alt="hero"
@@ -16,48 +26,39 @@ const FooterSection = () => {
           className="mr-auto ml-12"
         />
         <div className="border-8 border-foreground dark:border-foreground p-6">
-          <p className="font-press-start text-lg leading-loose uppercase">
-            Hi again! How was the tour? Thank you for taking the time to scroll
-            all the way down and explore my journey as a frontend developer. I
-            truly appreciate it. If you&apos;re interested in working together
-            or just want to connect, feel free to reach out through the links
-            below. I&apos;d love to hear from you_
+          <p className="font-press-start text-md font-bold leading-loose uppercase mb-4">
+            Adi
           </p>
 
-          <div className="flex flex-col gap-2 my-4">
-            <div className="flex items-center gap-2 w-fit border-b-2 border-background hover:border-foreground">
-              <PixelIcon icon={FaLinkedin} size={24} pixelSize={2} />
-              <a
-                href="https://github.com/adiputra32"
-                target="_blank"
-                rel="noreferrer"
-                className="text-lg font-press-start uppercase leading-loose"
-              >
-                LinkedIn
-              </a>
-            </div>
-            <div className="flex items-center gap-2 w-fit border-b-2 border-background hover:border-foreground">
-              <PixelIcon icon={FaInstagram} size={24} pixelSize={2} />
-              <a
-                href="https://github.com/adiputra32"
-                target="_blank"
-                rel="noreferrer"
-                className="text-lg font-press-start uppercase leading-loose"
-              >
-                Instagram
-              </a>
-            </div>
-            <div className="flex items-center gap-2 w-fit border-b-2 border-background hover:border-foreground">
-              <PixelIcon icon={FaGithub} size={24} pixelSize={2} />
-              <a
-                href="https://github.com/adiputra32"
-                target="_blank"
-                rel="noreferrer"
-                className="text-lg font-press-start uppercase leading-loose"
-              >
-                GitHub
-              </a>
-            </div>
+          <p className="font-press-start text-md leading-loose uppercase mb-4">
+            {dict.footer.greetings}
+          </p>
+
+          <div className="flex flex-col gap-2">
+            {SOCIAL_LINKS.map(({ id, label, href, icon }) => {
+              const isHovered = buttonHovered === id;
+
+              return (
+                <div
+                  key={id}
+                  className="flex items-center gap-2 w-fit text-md font-press-start uppercase leading-loose"
+                  onMouseEnter={() => setButtonHovered(id)}
+                  onMouseLeave={() => setButtonHovered(null)}
+                >
+                  {isHovered && <span>[</span>}
+                  <PixelIcon icon={icon} size={24} pixelSize={2} />
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-md font-press-start uppercase leading-loose"
+                  >
+                    {label}
+                  </a>
+                  {isHovered && <span>]</span>}
+                </div>
+              );
+            })}
           </div>
         </div>
       </motion.div>

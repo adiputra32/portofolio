@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "greetings": "Hi! Welcome to my virtual summary. I put this space together so you can get to know me better. I hope you enjoy the experience. Please scroll down to unlock the next level of my journey_"
+  },
+  "about": {
+    "title": "WHO AM I?_",
+    "paragraph1": "I'm Adi, with 5+ years of experience as Front-End Developer building web and mobile applications.",
+    "paragraph2": "I'm skilled in React, React Native, TypeScript, and Laravel, with experience developing scalable, multi-language systems and cross-platform mobile apps.",
+    "paragraph3": "Passionate about building intuitive, high-performance user interfaces and improving user experience through modern frontend technologies."
+  },
+  "experience": {
+    "title": "WORK EXPERIENCES_"
+  },
+  "project": {
+    "title": "PROJECTS_",
+    "projects": {
+      "payroll": {
+        "title": "Payroll System",
+        "description": "A centralized payroll management system built with Laravel for an outsourcing agency. The application streamlines monthly salary processing and financial tracking for outsourced employees deployed across multiple client companies, ensuring accurate and efficient payroll operations."
+      },
+      "contract": {
+        "title": "B2B Contract Management System",
+        "description": "A web-based contract management system built to handle corporate agreements and amendments with external partners. Developed as an extension to the existing payroll application, this platform digitalizes traditional paper-based workflows, significantly reducing manual administrative tasks and accelerating the contract management lifecycle."
+      },
+      "disaster": {
+        "title": "Public Disaster Report",
+        "description": "A mobile application that empowers users to report natural and social disasters in specific areas. Authorized responders can verify these reports and coordinate emergency mitigation efforts, while the platform provides all users with a live, real-time timeline to track incident updates and ongoing responses."
+      }
+    }
+  },
+  "referrer": {
+    "title": "REFERRER_"
+  },
+  "footer": {
+    "greetings": "Hi again! How was the tour? Thank you for taking the time to scroll all the way down and explore my journey as a frontend developer. I truly appreciate it. If you're interested in working together or just want to connect, feel free to reach out through the links below. I'd love to hear from you_"
+  },
+  "miscellaneous": {
+    "footer": "Design inspiration by "
+  }
+}

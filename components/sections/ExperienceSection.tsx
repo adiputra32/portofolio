@@ -1,10 +1,17 @@
+"use client";
+
+import type { Dictionary } from "@/lib/get-dictionary";
 import { MdSquare } from "react-icons/md";
 
-const ExperienceSection = () => {
+interface ExperienceSectionProps {
+  dict: Dictionary;
+}
+
+const ExperienceSection = ({ dict }: ExperienceSectionProps) => {
   return (
     <section id="experience" className="min-h-screen flex flex-col pt-[15vh]">
       <h1 className="text-2xl text-center font-press-start font-normal tracking-wide mb-12">
-        WORK EXPERIENCES_
+        {dict.experience.title}
       </h1>
 
       <div className="grid grid-cols-2 justify-between gap-4">

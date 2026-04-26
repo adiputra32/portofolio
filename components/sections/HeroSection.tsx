@@ -1,10 +1,17 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
+import type { Dictionary } from "@/lib/get-dictionary";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  dict: Dictionary;
+}
+
+const HeroSection = ({ dict }: HeroSectionProps) => {
   return (
     <section id="none" className="h-screen flex items-center justify-center">
-      <motion.div className="w-5xl">
+      <motion.div className="w-full max-w-5xl">
         <Image
           src="/hero2.png"
           alt="hero"
@@ -14,10 +21,11 @@ const HeroSection = () => {
           className="mr-auto ml-12"
         />
         <div className="border-8 border-foreground dark:border-foreground p-6">
-          <p className="font-press-start text-lg leading-loose uppercase">
-            Hi! Welcome to my virtual summary. I put this space together so you
-            can get to know me better. I hope you enjoy the experience. Please
-            scroll down to unlock the next level of my journey_
+          <p className="font-press-start text-[12px] lg:text-lg font-bold leading-loose uppercase mb-4">
+            Adi
+          </p>
+          <p className="font-press-start text-[12px] lg:text-lg leading-loose uppercase">
+            {dict.hero.greetings}
           </p>
         </div>
       </motion.div>
