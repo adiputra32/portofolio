@@ -50,10 +50,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${electrolize.variable} ${tiny5.variable} ${orbitron.variable} ${pressStart2P.variable} h-full antialiased`}
+      className={`${inter.variable} ${electrolize.variable} ${tiny5.variable} ${orbitron.variable} ${pressStart2P.variable} h-full antialiased no-scrollbar`}
       suppressHydrationWarning
     >
-      <body className="min-h-full w-full max-w-[1600px] mx-auto flex flex-col">
+      <body className="min-h-screen w-screen max-w-[100vw] flex flex-col overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

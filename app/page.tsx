@@ -1,28 +1,35 @@
 "use client";
 
-import Navigation from "@/components/layout/navigation";
 import TorchParticles from "@/components/animations/torch-particles";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectSection from "@/components/sections/ProjectSection";
-import ContactSection from "@/components/sections/ContactSection";
+import FooterSection from "@/components/sections/FooterSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
+import ReferrerSection from "@/components/sections/ReferrerSection";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/header";
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col gap-4">
+    <main className="relative w-7xl max-w-[100vw] mx-auto">
       <TorchParticles
-        particleCount={10}
+        particleCount={20}
         speeds={[10, 15, 25]}
         sizes={[8, 10, 12]}
       />
-      <Navigation />
+      <Header />
 
-      <HeroSection />
-      <AboutSection />
-      <ExperienceSection />
-      <ProjectSection />
-      <ContactSection />
+      <div className="relative space-y-4 px-4">
+        <HeroSection />
+        <AboutSection />
+        <ExperienceSection />
+        <ProjectSection />
+        <ReferrerSection />
+        <FooterSection />
+      </div>
+
+      <Footer />
     </main>
   );
 }

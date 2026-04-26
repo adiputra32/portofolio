@@ -27,23 +27,26 @@ function PixelIcon({
       viewBox={`0 0 ${cols} ${rows}`}
       className={className}
       shapeRendering="crispEdges"
+      suppressHydrationWarning
     >
-      {grid.map((row, y) =>
-        row
-          .split("")
-          .map((cell, x) =>
-            cell === "#" ? (
-              <rect
-                key={`${x}-${y}`}
-                x={x}
-                y={y}
-                width={1}
-                height={1}
-                fill={color}
-              />
-            ) : null,
-          ),
-      )}
+      {grid.map((row, y) => (
+        <g key={y}>
+          {row
+            .split("")
+            .map((cell, x) =>
+              cell === "#" ? (
+                <rect
+                  key={`${x}-${y}`}
+                  x={x}
+                  y={y}
+                  width={1}
+                  height={1}
+                  fill={color}
+                />
+              ) : null,
+            )}
+        </g>
+      ))}
     </svg>
   );
 }
@@ -103,10 +106,25 @@ const MOON = [
   "..........###...",
   "..........###...",
   "...#.....####...",
-  "...##...#####...",
+  "...##...####....",
   "...#########....",
   "....#######.....",
-  ".....#####......",
+  ".....####.......",
+  "................",
+];
+
+const ARROW_UP = [
+  "................",
+  "................",
+  ".......##.......",
+  "......####......",
+  ".....######.....",
+  "....########....",
+  ".......##.......",
+  ".......##.......",
+  ".......##.......",
+  ".......##.......",
+  "................",
   "................",
 ];
 
@@ -126,4 +144,8 @@ export function PixelSunIcon(props: PixelIconProps) {
 
 export function PixelMoonIcon(props: PixelIconProps) {
   return <PixelIcon grid={MOON} {...props} />;
+}
+
+export function PixelArrowUpIcon(props: PixelIconProps) {
+  return <PixelIcon grid={ARROW_UP} {...props} />;
 }

@@ -42,7 +42,7 @@ function generateParticles(
     size: sizes[Math.floor(Math.random() * sizes.length)],
     speed: speeds[Math.floor(Math.random() * speeds.length)],
     startX: Math.random() * 100,
-    startY: 50 + Math.random() * 50, // Between 50vh and 100vh
+    startY: 20 + Math.random() * 80, // Between 20vh and 100vh
     distance: 20 + Math.random() * 20, // Travel 20-40vh up
     delay: Math.random() * 5, // 0 to 5s delay
   }));
