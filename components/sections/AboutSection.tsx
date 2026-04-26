@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import useSectionProgress from "../animations/scroll-progress";
 import { useMotionValueEvent, useTransform, motion } from "framer-motion";
+import { Dictionary } from "@/lib/get-dictionary";
 
 const MotionImage = motion.create(Image);
 
@@ -22,7 +23,11 @@ const IMAGE = [
   "/walk-10.png",
 ];
 
-const AboutSection = () => {
+interface AboutSectionProps {
+  dict: Dictionary;
+}
+
+const AboutSection = ({ dict }: AboutSectionProps) => {
   const ref = useRef(null);
   const { scrollYProgress } = useSectionProgress(ref);
   const [imageIndex, setImageIndex] = useState(0);
@@ -43,21 +48,16 @@ const AboutSection = () => {
       <div className="flex h-full items-center">
         <div className="flex-1 flex flex-col gap-4 text-center mx-auto">
           <h1 className="text-4xl font-press-start font-normal tracking-wide mb-4">
-            WHO AM I?_
+            {dict.about.title}
           </h1>
           <p className="text-2xl font-bold font-inter tracking-wide leading-relaxed">
-            I'm Adi, with 5+ years of experience as Front-End Developer building
-            web and mobile applications.
+            {dict.about.paragraph1}
           </p>
           <p className="text-2xl font-bold font-inter tracking-wide leading-relaxed">
-            I'm skilled in React, React Native, TypeScript, and Laravel, with
-            experience developing scalable, multi-language systems and
-            cross-platform mobile apps.
+            {dict.about.paragraph2}
           </p>
           <p className="text-2xl font-bold font-inter tracking-wide leading-relaxed">
-            Passionate about building intuitive, high-performance user
-            interfaces and improving user experience through modern frontend
-            technologies.
+            {dict.about.paragraph3}
           </p>
         </div>
 

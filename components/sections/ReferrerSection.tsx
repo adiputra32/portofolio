@@ -1,11 +1,18 @@
+"use client";
+
+import { Dictionary } from "@/lib/get-dictionary";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const ReferrerSection = () => {
+interface ReferrerSectionProps {
+  dict: Dictionary;
+}
+
+const ReferrerSection = ({ dict }: ReferrerSectionProps) => {
   return (
     <section id="referrer" className="min-h-screen pt-[15vh]">
       <h1 className="text-2xl text-center font-press-start font-normal tracking-wide mb-12">
-        REFERRER_
+        {dict.referrer.title}
       </h1>
 
       <div className="flex flex-col items-center gap-8">

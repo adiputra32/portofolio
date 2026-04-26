@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "greetings": "Hai! Selamat datang di ringkasan virtual saya. Saya menyusun ruang ini agar Anda dapat mengenal saya lebih baik. Semoga Anda menikmati pengalamannya. Silakan gulir ke bawah untuk membuka level selanjutnya dari perjalanan saya_"
+  },
+  "about": {
+    "title": "SIAPA SAYA?_",
+    "paragraph1": "Saya Adi, dengan pengalaman 5+ tahun sebagai Front-End Developer dalam membangun aplikasi web dan mobile.",
+    "paragraph2": "Saya memiliki keahlian dalam React, React Native, TypeScript, dan Laravel, dengan pengalaman mengembangkan sistem multi-bahasa yang terukur dan aplikasi seluler lintas platform.",
+    "paragraph3": "Sangat antusias dalam membangun antarmuka pengguna yang intuitif, berkinerja tinggi, dan meningkatkan pengalaman pengguna melalui teknologi frontend modern."
+  },
+  "experience": {
+    "title": "PENGALAMAN KERJA_"
+  },
+  "project": {
+    "title": "PROYEK_",
+    "projects": {
+      "payroll": {
+        "title": "Sistem Penggajian",
+        "description": "Sistem penggajian terpusat berbasis web yang menangani perhitungan gaji bulanan, PPh 21, dan pelaporan keuangan untuk puluhan perusahaan dengan model bisnis outsourcing. Platform ini memungkinkan manajemen data karyawan, absensi, dan tunjangan yang fleksibel serta terautomasi."
+      },
+      "contract": {
+        "title": "Sistem Manajemen Kontrak B2B",
+        "description": "Sebuah sistem manajemen kontrak berbasis web yang dirancang untuk menangani perjanjian dan amandemen korporat dengan mitra eksternal. Dibangun sebagai perpanjangan dari aplikasi penggajian yang sudah ada, platform ini mendigitalisasi alur kerja tradisional berbasis kertas, secara signifikan mengurangi tugas administratif manual dan mempercepat siklus manajemen kontrak."
+      },
+      "disaster": {
+        "title": "Pelaporan Bencana Publik",
+        "description": "Sebuah aplikasi seluler yang memberdayakan pengguna untuk melaporkan bencana alam dan sosial di area tertentu. Responden yang berwenang dapat memverifikasi laporan ini dan mengoordinasikan upaya mitigasi darurat, sementara platform menyediakan garis waktu langsung secara real-time bagi semua pengguna untuk melacak pembaruan insiden dan respons yang sedang berlangsung."
+      }
+    }
+  },
+  "referrer": {
+    "title": "REKOMENDASI_"
+  },
+  "footer": {
+    "greetings": "Hai! Bagaimana turnya? Terima kasih telah meluangkan waktu untuk menggulir ke bawah dan menjelajahi perjalanan saya sebagai pengembang frontend. Saya sangat menghargainya. Jika Anda tertarik untuk bekerja sama atau hanya ingin terhubung, jangan ragu untuk menghubungi melalui tautan di bawah. Saya akan senang mendengar dari Anda_"
+  },
+  "miscellaneous": {
+    "footer": "Inspirasi desain oleh "
+  }
+}

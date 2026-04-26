@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import {
   PixelMoonIcon,
   PixelSpeakerOffIcon,
@@ -9,11 +9,13 @@ import {
 } from "../icons/pixel-icons";
 import { Button } from "../ui/button";
 import { useTheme } from "next-themes";
+import { setLocaleCookie } from "@/app/actions/locale";
 
-const Header = () => {
+const Header = ({ locale }: { locale: string }) => {
   const { theme, setTheme } = useTheme();
+  const [isPending, startTransition] = useTransition();
   const [isSoundOn, setSoundOn] = useState(true);
-  const [language, setLanguage] = useState("EN");
+  const currentLang = locale === "id" ? "ID" : "EN";
 
   return (
     <header className="flex justify-between items-center gap-4 fixed w-7xl max-w-[100vw] h-[14vh] z-50 px-4">
@@ -57,10 +59,13 @@ const Header = () => {
             variant="outline"
             className="border-4 border-foreground dark:border-foreground rounded-none font-press-start font-bold size-10 cursor-pointer hover:scale-110 text-xs tracking-wider"
             onClick={() => {
-              setLanguage(language === "ID" ? "EN" : "ID");
+              startTransition(() => {
+                setLocaleCookie(locale === "id" ? "en" : "id");
+              });
             }}
+            disabled={isPending}
           >
-            {language}
+            {currentLang}
           </Button>
         </div>
       </div>

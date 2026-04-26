@@ -10,10 +10,15 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { useState } from "react";
+import { Dictionary } from "@/lib/get-dictionary";
 
 const MotionButton = motion.create(Button);
 
-const Footer = () => {
+interface FooterProps {
+  dict: Dictionary;
+}
+
+const Footer = ({ dict }: FooterProps) => {
   const { scrollY } = useScroll();
   const [showMoveToTop, setShowMoveToTop] = useState(false);
 
@@ -35,7 +40,7 @@ const Footer = () => {
   return (
     <footer className="flex justify-between items-center w-7xl max-w-[100vw] fixed bottom-0 h-[8vh] z-50 px-4">
       <span className="text-[10px] font-press-start font-normal uppercase">
-        DESIGN INPIRED BY{" "}
+        {dict.miscellaneous.footer}
         <Link
           href="https://noeinoi.com/"
           target="_blank"

@@ -1,3 +1,5 @@
+"use client";
+
 import { type RefObject } from "react";
 import { useScroll, useSpring } from "framer-motion";
 
