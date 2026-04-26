@@ -29,7 +29,7 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
-            className="border-4 border-foreground dark:border-foreground rounded-none size-10"
+            className="border-4 border-foreground dark:border-foreground rounded-none size-10 cursor-pointer hover:scale-110"
             onClick={() => {
               setTheme(theme === "dark" ? "light" : "dark");
             }}
@@ -42,7 +42,7 @@ const Header = () => {
           </Button>
           <Button
             variant="outline"
-            className="border-4 border-foreground dark:border-foreground rounded-none size-10"
+            className="border-4 border-foreground dark:border-foreground rounded-none size-10 cursor-pointer hover:scale-110"
             onClick={() => {
               setSoundOn(!isSoundOn);
             }}
@@ -55,7 +55,7 @@ const Header = () => {
           </Button>
           <Button
             variant="outline"
-            className="border-4 border-foreground dark:border-foreground rounded-none font-press-start font-bold size-10 text-xs tracking-wider"
+            className="border-4 border-foreground dark:border-foreground rounded-none font-press-start font-bold size-10 cursor-pointer hover:scale-110 text-xs tracking-wider"
             onClick={() => {
               setLanguage(language === "ID" ? "EN" : "ID");
             }}

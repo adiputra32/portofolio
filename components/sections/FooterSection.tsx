@@ -1,9 +1,34 @@
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaCaretDown, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import PixelIcon from "@/components/ui/pixel-icon";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
+import { IoCaretDownSharp } from "react-icons/io5";
+
+const SOCIAL_LINKS = [
+  {
+    id: "linkedin",
+    label: "LinkedIn",
+    href: "https://github.com/adiputra32",
+    icon: FaLinkedin,
+  },
+  {
+    id: "instagram",
+    label: "Instagram",
+    href: "https://github.com/adiputra32",
+    icon: FaInstagram,
+  },
+  {
+    id: "github",
+    label: "GitHub",
+    href: "https://github.com/adiputra32",
+    icon: FaGithub,
+  },
+];
 
 const FooterSection = () => {
+  const [buttonHovered, setButtonHovered] = useState<string | null>();
+
   return (
     <section id="footer" className="h-screen flex items-center justify-center">
       <motion.div className="w-5xl">
@@ -25,39 +50,30 @@ const FooterSection = () => {
           </p>
 
           <div className="flex flex-col gap-2 my-4">
-            <div className="flex items-center gap-2 w-fit border-b-2 border-background hover:border-foreground">
-              <PixelIcon icon={FaLinkedin} size={24} pixelSize={2} />
-              <a
-                href="https://github.com/adiputra32"
-                target="_blank"
-                rel="noreferrer"
-                className="text-lg font-press-start uppercase leading-loose"
-              >
-                LinkedIn
-              </a>
-            </div>
-            <div className="flex items-center gap-2 w-fit border-b-2 border-background hover:border-foreground">
-              <PixelIcon icon={FaInstagram} size={24} pixelSize={2} />
-              <a
-                href="https://github.com/adiputra32"
-                target="_blank"
-                rel="noreferrer"
-                className="text-lg font-press-start uppercase leading-loose"
-              >
-                Instagram
-              </a>
-            </div>
-            <div className="flex items-center gap-2 w-fit border-b-2 border-background hover:border-foreground">
-              <PixelIcon icon={FaGithub} size={24} pixelSize={2} />
-              <a
-                href="https://github.com/adiputra32"
-                target="_blank"
-                rel="noreferrer"
-                className="text-lg font-press-start uppercase leading-loose"
-              >
-                GitHub
-              </a>
-            </div>
+            {SOCIAL_LINKS.map(({ id, label, href, icon }) => {
+              const isHovered = buttonHovered === id;
+
+              return (
+                <div
+                  key={id}
+                  className="flex items-center gap-2 w-fit text-lg font-press-start uppercase leading-loose"
+                  onMouseEnter={() => setButtonHovered(id)}
+                  onMouseLeave={() => setButtonHovered(null)}
+                >
+                  {isHovered && <span>[</span>}
+                  <PixelIcon icon={icon} size={24} pixelSize={2} />
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-lg font-press-start uppercase leading-loose"
+                  >
+                    {label}
+                  </a>
+                  {isHovered && <span>]</span>}
+                </div>
+              );
+            })}
           </div>
         </div>
       </motion.div>

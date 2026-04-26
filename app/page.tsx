@@ -8,7 +8,7 @@ import FooterSection from "@/components/sections/FooterSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ReferrerSection from "@/components/sections/ReferrerSection";
 import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/header";
+import Header from "@/components/layout/Header";
 
 export default function Home() {
   return (
